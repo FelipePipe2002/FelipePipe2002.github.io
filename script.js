@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (content === 'finished') {
             element.style.backgroundColor = 'green';
         } else if (content === 'in progress') {
-            element.style.backgroundColor = 'orange';
+            element.style.backgroundColor = 'rgb(233, 135, 0)';
         }
     });
 });
