@@ -15,9 +15,16 @@ h1{
     font-size: 3em;
 }
 
+a{
+    color: #d1d1d1;
+    text-decoration: none;
+    margin: 0;
+}
+
 .navegador-principal{
     background-color: #333;
     color: #fff;
+    min-width: 950px;
     width: 100%;
     text-align: center;
     position: fixed;
@@ -39,11 +46,6 @@ h1{
     justify-content: space-around;
 }
 
-.accesos a{
-    color: #fff;
-    text-decoration: none;
-}
-
 .panel{
     width: 100%;
     height: fit-content;
@@ -56,6 +58,67 @@ h1{
     color: #3a3a3a;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2em;
+
+}
+
+#contenttitle{
+    width: 100%;
+    display: flex;
+}
+
+#contenttitle h2{
+    color: #d1d1d1;
+    font-size: 1.5em;
+    padding: 0vh 3vh;
+    text-align: center;
+    margin: 0;
+}
+
+#contenttitle h3{
+    color: #d1d1d1;
+    font-size: 1em;
+    height: max-content;
+    background-color: #ff0000;
+    padding: 2px 10px;
+    margin: auto 0;
+    border-radius: 5px;
+    
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #504f4f;
+    margin: 1vh 0;
+    padding: 1vh 0;
+}
+
+.content p{
+    color: #d1d1d1;
+    font-size: 1.2em;
+    padding: 0vh 3vh;
+}
+
+.content h3{
+    color: #d1d1d1;
+    padding: 0vh 3vh;
+    margin: 0;
+}
+
+.content ul{
+    color: #d1d1d1;
+    font-size: 1.2em;
+    padding: 0vh 3vh;
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.content li{
+    color: #d1d1d1;
+    font-size: 1em;
+    padding: 0vh 1vh;
 
 }
 
