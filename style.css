@@ -9,6 +9,12 @@ body{
     margin-top: 5vh;
 }
 
+h1{
+    color: #ff0000;
+    text-align: center;
+    font-size: 3em;
+}
+
 .navegador-principal{
     background-color: #333;
     color: #fff;
@@ -28,7 +34,7 @@ body{
 }
 
 .accesos{
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: space-around;
 }
@@ -40,9 +46,9 @@ body{
 
 .panel{
     width: 100%;
+    height: fit-content;
     display: flex;
-    margin-top: 5vh;
-    padding-left: 5vh;
+    padding-left: 3vh;
     background-color: #94724b;
 }
 
@@ -50,6 +56,6 @@ body{
     color: #3a3a3a;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2em;
-    margin-bottom: 2vh;
+
 }
 
