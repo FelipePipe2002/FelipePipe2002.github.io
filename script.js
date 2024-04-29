@@ -22,4 +22,7 @@ let contentexpandable = document.getElementById('contentexpandable');
 
 btnExpandable.addEventListener('click', function() {
     contentexpandable.style.height = (contentexpandable.style.height === '') ? contentexpandable.scrollHeight + "px" : '';
+    //get image in btnExpandable
+    let img = btnExpandable.querySelector('img');
+    img.src = (img.src.includes('down')) ? 'images/up.png' : 'images/down.png';
 });
