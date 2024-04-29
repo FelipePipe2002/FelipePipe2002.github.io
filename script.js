@@ -1,17 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Get all h3 elements inside divs with id "contenttitle"
-    var contentTitles = document.querySelectorAll('#contenttitle h3');
+    changeBackgroundColor('.contenttitle h3');
+    changeBackgroundColor('.contentsubtitle h3');
+});
+
+function changeBackgroundColor(selector) {
+    var elements = document.querySelectorAll(selector);
     
-    // Loop through each h3 element
-    contentTitles.forEach(function(element) {
-        // Get the content of the h3 element
+    elements.forEach(function(element) {
         var content = element.textContent.trim().toLowerCase();
         
-        // Check the content and change the background color accordingly
         if (content === 'finished') {
             element.style.backgroundColor = 'green';
         } else if (content === 'in progress') {
             element.style.backgroundColor = 'rgb(233, 135, 0)';
         }
     });
+}
+
+let btnExpandable = document.getElementById('expandable');
+let contentexpandable = document.getElementById('contentexpandable');
+
+btnExpandable.addEventListener('click', function() {
+    contentexpandable.style.height = (contentexpandable.style.height === '') ? contentexpandable.scrollHeight + "px" : '';
 });
