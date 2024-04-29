@@ -139,7 +139,7 @@ a {
     border-radius: 5px;
 }
 
-.contentsubtitle img,
+#contentexpandable img,
 video {
     width: 60%;
     height: auto;
