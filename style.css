@@ -3,29 +3,18 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
+    width: 100%;
     overflow-x: hidden;
 }
 
 #inicio {
-    margin-top: 5vh;
-}
-
-h1 {
-    color: #EBC369;
-    text-align: center;
-    font-size: 3em;
-}
-
-a {
-    color: #d1d1d1;
-    text-decoration: none;
-    margin: 0;
+    margin-top: 6vh;
 }
 
 .navegador-principal {
     background-color: #782D2D;
     color: #fff;
-    min-width: 950px;
+    min-width: fit-content;
     width: 100%;
     text-align: center;
     position: fixed;
@@ -38,11 +27,17 @@ a {
 
 .navegador-principal img {
     height: 90%;
-    padding-right: 20px;
+    padding-right: 1vh;
+}
+
+a {
+    color: #d1d1d1;
+    text-decoration: none;
+    margin: 0px 2px;
 }
 
 .accesos {
-    width: 40%;
+    width: min-content;
     display: flex;
     justify-content: space-around;
 }
@@ -52,13 +47,13 @@ a {
     width: 100%;
     height: fit-content;
     display: flex;
-    padding-left: 3vh;
 }
 
 .panel h1 {
     color: #EBC369;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2em;
+    padding: 5px;
 }
 
 .content {
@@ -66,7 +61,7 @@ a {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 1vh 0;
+    margin: 0.5vh 0;
     padding: 1vh 0;
 }
 
@@ -90,10 +85,12 @@ a {
 }
 
 .content ul {
-    font-size: 1.2em;
+    font-size: 1.4em;
     padding: 0vh 3vh;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+
 }
 
 .content li {
@@ -101,16 +98,25 @@ a {
     padding: 0vh 1vh;
 }
 
-.contenttitle{
+.contenttitle {
     width: 100%;
     display: flex;
     padding-bottom: 10px;
 }
-.contenttitle button {
+
+.contenttitle a {
+    color: #F5D7AF;
+    text-decoration: underline;
+}
+
+.contenttitle button,
+.panel button {
     background-color: transparent;
     border: none;
 }
-.contenttitle img {
+
+.contenttitle img,
+.panel img {
     height: 25px;
 }
 
@@ -124,7 +130,6 @@ a {
     color: #F5D7AF;
     font-size: 1.5em;
     padding: 0vh 3vh;
-    text-align: center;
     margin: 0;
 }
 
@@ -139,7 +144,7 @@ a {
     border-radius: 5px;
 }
 
-.contentsubtitle+ img,
+.contentsubtitle + img,
 video {
     width: 60%;
     height: auto;
@@ -147,13 +152,10 @@ video {
 }
 
 #contentexpandable {
-    background-color: #F5A05F;
     width: 100%;
-    height: 30px;
+    height: 0px;
     display: flex;
     flex-direction: column;
-    margin: 1vh 0;
-    padding: 1vh 0;
     overflow: hidden;
     transition: height 1s;
 }

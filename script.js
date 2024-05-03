@@ -17,12 +17,18 @@ function changeBackgroundColor(selector) {
     });
 }
 
-let btnExpandable = document.getElementById('expandable');
-let contentexpandable = document.getElementById('contentexpandable');
+var expandableButtons = document.querySelectorAll('#expandable');
+var expandableContent = document.querySelectorAll('#contentexpandable');
 
-btnExpandable.addEventListener('click', function() {
-    contentexpandable.style.height = (contentexpandable.style.height === '') ? contentexpandable.scrollHeight + "px" : '';
-    //get image in btnExpandable
-    let img = btnExpandable.querySelector('img');
-    img.src = (img.src.includes('down')) ? 'images/up.png' : 'images/down.png';
-});
+expandableButtons.forEach(function(button, index) {
+    button.addEventListener('click', function() {
+        expandableContent[index].style.height = (expandableContent[index].style.height === '') ? expandableContent[index].scrollHeight + "px" : '';
+        //get image in button
+        var img = button.querySelector('img');
+        img.src = (img.src.includes('down')) ? 'images/up.png' : 'images/down.png';
+        //get parent div
+        var parent = expandableContent[index].parentElement.parentElement;
+        parent.style.height = (expandableContent[index].style.height === '') ? parseInt(parent.style.height) - parseInt(expandableContent[index].scrollHeight) + "px" : parseInt(parent.style.height) + parseInt(expandableContent[index].scrollHeight) + "px";
+    });
+    button.click();
+})
