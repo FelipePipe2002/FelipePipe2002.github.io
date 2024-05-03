@@ -31,6 +31,4 @@ expandableButtons.forEach(function(button, index) {
         var parent = expandableContent[index].parentElement.parentElement;
         parent.style.height = (expandableContent[index].style.height === '0px') ? parseInt(parent.style.height) - parseInt(expandableContent[index].scrollHeight) + "px" : parseInt(parent.style.height) + parseInt(expandableContent[index].scrollHeight) + "px";
     });
-    button.click();
-    button.click();
 })
