@@ -21,14 +21,18 @@ var expandableButtons = document.querySelectorAll('#expandable');
 var expandableContent = document.querySelectorAll('#contentexpandable');
 
 expandableButtons.forEach(function(button, index) {
+    expandableContent[index].style.height = expandableContent[index].scrollHeight + "px";
     button.addEventListener('click', function() {
-        expandableContent[index].style.height = (expandableContent[index].style.height === '') ? expandableContent[index].scrollHeight + "px" : '';
+        expandableContent[index].style.height = (expandableContent[index].style.height === '0px') ? expandableContent[index].scrollHeight + "px" : '0px';
         //get image in button
         var img = button.querySelector('img');
         img.src = (img.src.includes('down')) ? 'images/up.png' : 'images/down.png';
         //get parent div
+        console.log(expandableContent[index]);
+        console.log(expandableContent[index].parentElement.parentElement);
+        console.log((expandableContent[index].style.height === ''));
         var parent = expandableContent[index].parentElement.parentElement;
-        parent.style.height = (expandableContent[index].style.height === '') ? parseInt(parent.style.height) - parseInt(expandableContent[index].scrollHeight) + "px" : parseInt(parent.style.height) + parseInt(expandableContent[index].scrollHeight) + "px";
+        parent.style.height = (expandableContent[index].style.height === '0px') ? parseInt(parent.style.height) - parseInt(expandableContent[index].scrollHeight) + "px" : parseInt(parent.style.height) + parseInt(expandableContent[index].scrollHeight) + "px";
+        console.log(parent.style.height);
     });
-    button.click();
 })
