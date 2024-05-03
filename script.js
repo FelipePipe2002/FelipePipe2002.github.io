@@ -28,11 +28,9 @@ expandableButtons.forEach(function(button, index) {
         var img = button.querySelector('img');
         img.src = (img.src.includes('down')) ? 'images/up.png' : 'images/down.png';
         //get parent div
-        console.log(expandableContent[index]);
-        console.log(expandableContent[index].parentElement.parentElement);
-        console.log((expandableContent[index].style.height === ''));
         var parent = expandableContent[index].parentElement.parentElement;
         parent.style.height = (expandableContent[index].style.height === '0px') ? parseInt(parent.style.height) - parseInt(expandableContent[index].scrollHeight) + "px" : parseInt(parent.style.height) + parseInt(expandableContent[index].scrollHeight) + "px";
-        console.log(parent.style.height);
     });
+    button.click();
+    button.click();
 })
