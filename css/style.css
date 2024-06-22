@@ -1,0 +1,158 @@
+body{
+    background-image: url(../images/background.png);
+    background-size: cover;
+    background-position-x: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    scrollbar-color: #00000088 transparent;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    word-wrap: break-word !important;
+    font-size: 1rem;
+}
+
+#console{
+    background-color: #000000bd;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    min-width: 400px;
+    height: 75%;
+    min-height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px #000;
+    overflow: hidden;
+}
+
+#console-header{
+    background-color: #242424;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    height: 6%;
+    padding: 2px 5px;
+    cursor: pointer;
+    user-select: none;
+
+    button{
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    #console-header-right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+#console-body{
+    min-width: 90%;
+    max-width: 100%;
+    max-height: 94%;
+    padding-left: 5px;
+    overflow-y: auto;
+    overflow-x: unset;
+    position: relative;
+
+
+    textarea{
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #00000000;
+        color: #fff;
+        font-size: medium;
+        min-width: 100%;
+        max-width: 100%;
+        height: max-content;
+        border: none;
+        resize: none;
+        padding: 0 0 8px 0;
+    }
+    textarea:focus{
+        outline: none;
+    }
+
+    #content{
+        max-width: 100%;
+    }
+}
+
+#window{
+    background-color: #000000bd;
+    color: #fff;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px #000;
+    overflow: hidden;
+}
+
+#window-header{
+    background-color: #242424;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    height: 6%;
+    padding: 2px 5px;
+    cursor: pointer;
+    user-select: none;
+
+    button{
+        background-color: transparent;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    #console-header-right{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+#snake{
+    canvas{
+        background-color: #fff;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    button{
+        background-color: #000;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+}

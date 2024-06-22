@@ -1,293 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-</head>
-
-<body>
-    <header id="inicio">
-        <nav class="navegador-principal">
-            <img src="logo.png">
-            <div class="accesos">
-                <a href="#inicio">Home</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#learning">Learning</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <!--About-->
-    <div id="about" class="panel">
-        <h1>About</h1>
-        <button id="expandable"><img src="/images/down.png"></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="console">
+      <div id="console-header">
+        <h3 id="console-name">Portafolio</h3>
+        <div id="console-header-right">
+          <button id="maximize">
+            <img src="images/minus.png" alt="maximize" />
+          </button>
+          <button id="minimize">
+            <img src="images/copy.png" alt="minimize" />
+          </button>
+          <button id="exit"><img src="images/close.png" alt="exit" /></button>
+        </div>
+      </div>
+      <div id="console-body">
+        <div id="content">
+          <!--Contenido aca-->
+        </div>
+        <textarea
+          id="command"
+          placeholder="Type a command or use /help"
+          oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+        >
+        </textarea>
+      </div>
     </div>
-    <div id="contentexpandable">
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Felipe Manuel Bertoldi</h2>
-            </div>
-            <p>
-                Soy estudiante de Ingeniería en Sistemas de Información en la Universidad del Centro de la Provincia de
-                Buenos Aires. Me apasiona la programación, el desarrollo de aplicaciones, el diseño 3D, los videojuegos
-                y la
-                inteligencia artificial. Siempre estoy buscando nuevos desafíos y oportunidades para crecer en el mundo
-                de
-                la tecnología.
-            </p>
-        </div>
-    </div>
-
-
-    <!--Education-->
-    <div id="education" class="panel">
-        <h1>Education</h1>
-        <button id="expandable"><img src="/images/down.png"></button>
-    </div>
-    <div id="contentexpandable">
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Universidad del Centro de la Provincia de Buenos Aires</h2>
-                <h3>2020 - present</h3>
-            </div>
-            <p>
-                Estudiante de Ingeniería en Sistemas de Información
-            </p>
-            <div class="contenttitle">
-                <h2>Escuela San Jose de Tandil</h2>
-                <h3>2013 - 2019</h3>
-            </div>
-            <p>
-                Bachiller en Economía y Administración
-            </p>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Idiomas</h2>
-            </div>
-            <p>
-            <ul>
-                <li>Español: Nativo</li>
-                <li>Ingles: Intermedio</li>
-            </ul>
-            </p>
-        </div>
-    </div>
-
-
-    <!--Skills-->
-    <div id="skills" class="panel">
-        <h1>Skills</h1>
-        <button id="expandable"><img src="/images/down.png"></button>
-    </div>
-    <div id="contentexpandable">
-        <div class="content">
-            <ul>
-                <li><i class="devicon-java-plain colored"></i> Java</li>
-                <li><i class="devicon-spring-original colored"></i> Spring</li>
-                <li><i class="devicon-python-plain colored"></i> Python</li>
-                <li><i class="devicon-unity-plain colored"></i> Unity</li>
-                <li><i class="devicon-csharp-plain colored"></i> C#</li>
-                <li><i class="devicon-postgresql-plain colored"></i> PostgreSQL</li>
-                <li><i class="devicon-blender-original colored"></i> Blender</li>
-            </ul>
-        </div>
-    </div>
-
-
-    <!--Learning-->
-    <div id="learning" class="panel">
-        <h1>Learning</h1>
-        <button id="expandable"><img src="/images/down.png"></button>
-    </div>
-    <div id="contentexpandable">
-        <div class="content">
-            <ul>
-                <li><i class="devicon-html5-plain colored"></i> HTML</li>
-                <li><i class="devicon-css3-plain colored"></i> CSS</li>
-                <li><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-                <li><i class="devicon-angular-plain colored"></i> Angular</li>
-                <li><i class="devicon-typescript-plain colored"></i> TypeScript</li>
-                <li><i class="devicon-opengl-plain colored"></i> OpenGL</li>
-            </ul>
-        </div>
-    </div>
-
-
-    <!--Projects-->
-    <div id="projects" class="panel">
-        <h1>Projects</h1>
-        <button id="expandable"><img src="/images/down.png"></button>
-    </div>
-    <div id="contentexpandable">
-        <div class="content">
-            <div class="contenttitle">
-                <a href="https://github.com/FelipePipe2002/Compilador" target="_blank">
-                    <h2>Compilador</h2>
-                </a>
-                <h3>finished</h3>
-            </div>
-            <p>
-                Compilador en base a un trabajo en grupo de la universidad, el cual se encarga de analizar un archivo de
-                texto con un lenguaje de programación propio y compilarlo a un lenguaje de programación de bajo nivel.
-            </p>
-            <h3>Technologias</h3>
-            <ul>
-                <li><i class="devicon-java-plain colored"></i> Java</li>
-                <li><img src="assembly.svg" id="icon"/> Assembly</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <a href="https://github.com/FelipePipe2002/BotsTradingAlgoritmico" target="_blank">
-                    <h2>Bot de Trading Algoritmico</h2>
-                </a>
-                <h3>finished</h3>
-            </div>
-            <p>
-                Trabajo en grupo de la universidad, el cual se encarga de realizar trading algoritmico en base a una
-                serie de indicadores tecnicos.
-            </p>
-            <h3>Technologias</h3>
-            <ul>
-                <li><i class="devicon-python-plain colored"></i> Python</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <a href="https://github.com/FelipePipe2002/TimeCalculatorApp" target="_blank">
-                    <h2>TimeCalculator App</h2>
-                </a>
-                <h3>finished</h3>
-            </div>
-            <p>
-                Aplicacion de calcular el tiempo que va a tardar en ver una serie de videos en base a la duracion de los
-                mismos.
-            </p>
-            <h3>Technologias</h3>
-            <ul>
-                <li><i class="devicon-java-plain colored"></i> Java</li>
-                <li><i class="devicon-android-plain colored"></i> Android</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <a href="https://github.com/FelipePipe2002/Map-Generator-2D" target="_blank">
-                    <h2>Generador de mapas 2D</h2>
-                </a>
-                <h3>in progress</h3>
-            </div>
-            <p>
-                Generador de mapas en 2D, el cual se encarga de generar un mapa a partir de varias tecnicas de
-                generación.
-            </p>
-            <h3>Technologias</h3>
-            <ul>
-                <li><i class="devicon-unity-plain colored"></i> Unity</li>
-                <li><i class="devicon-csharp-plain colored"></i> C#</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Arcade Game (private repo)</h2>
-                <h3>in progress</h3>
-            </div>
-            <p>
-                Juego arcade parecido al vampire survivors pero mezclado con el estilo de juego de minecraft, generos:
-                survival, crafting, sandbox, bullet hell.
-            </p>
-            <h3>Technologias</h3>
-            <ul>
-                <li><i class="devicon-unity-plain colored"></i> Unity</li>
-                <li><i class="devicon-csharp-plain colored"></i> C#</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Sistema de turnos medicos (private repo)</h2>
-                <h3>in progress</h3>
-            </div>
-            <p>
-                Sistema de turnos medicos para clinicas, el cual se encarga de gestionar los turnos de los pacientes y
-                los medicos.
-            </p>
-            <h3>Technologias</h3>
-            <ul>
-                <li><i class="devicon-java-plain colored"></i> Java</li>
-                <li><i class="devicon-spring-original colored"></i> Spring</li>
-                <li><i class="devicon-angular-plain colored"></i> Angular</li>
-                <li><i class="devicon-typescript-plain colored"></i> TypeScript</li>
-                <li><i class="devicon-postgresql-plain colored"></i> PostgreSQL</li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Proyectos de Blender</h2>
-                <button id="expandable"><img src="/images/down.png"></button>
-                <br>
-            </div>
-            <div id="contentexpandable">
-                <div>
-                    <div class="contentsubtitle">
-                        <h2>Pieza</h2>
-                        <h3>finished</h3>
-                    </div>
-                    <img src="https://i.imgur.com/RuCG5o2.png">
-                </div>
-                <div>
-                    <div class="contentsubtitle">
-                        <h2>Minecraft animation</h2>
-                        <h3>finished</h3>
-                    </div>
-                    <video controls loop muted>
-                        <source src="https://i.imgur.com/sncMa1c.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div>
-                    <div class="contentsubtitle">
-                        <h2>Some road</h2>
-                        <h3>in progress</h3>
-                    </div>
-                    <img src="https://i.imgur.com/LbxrZ9X.png">
-                </div>
-                <div class="contentsubtitle">
-                    <h2> I have this projects for now</h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!--Contact-->
-    <div id="contact" class="panel">
-        <h1>Contact</h1>
-        <button id="expandable"><img src="/images/down.png"></button>
-    </div>
-    <div id="contentexpandable">
-        <div class="content">
-            <div class="contenttitle">
-                <h2>Correo</h2>
-            </div>
-            <p>
-                <a href="mailto:felipemanu2015@gmail.com">felipemanu2015@gmail.com</a>
-            </p>
-        </div>
-    </div>
-
-
-    <script src="script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>

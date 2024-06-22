@@ -1,0 +1,185 @@
+{
+    "commands": [
+        {
+            "name": "help",
+            "description": "List all available commands",
+            "usage": ["help"]
+        },
+        {
+            "name": "clear",
+            "description": "Clear the screen",
+            "usage": ["clear"]
+        },
+        {
+            "name": "echo",
+            "description": "Print text",
+            "usage": ["echo {args}"]
+        },
+        {
+            "name": "color",
+            "description": "Change text color",
+            "usage": ["color {color}"]
+        },
+        {
+            "name": "about",
+            "description": "About me",
+            "usage": [
+                "echo #.l#.2Felipe Manuel Bertoldi#.r",
+                "echo #.1Soy estudiante de Ingeniería en",
+                "echo #.1Sistemas de Información en la",
+                "echo #.1Universidad del Centro de la",
+                "echo #.1Provincia de Buenos Aires.",
+                "echo #.aMe apasiona la programación,",
+                "echo #.6el desarrollo de aplicaciones,",
+                "echo #.5el diseño 3D,",
+                "echo #.4los videojuegos y la inteligencia",
+                "echo #.4artificial.",
+                "echo #.2Siempre estoy buscando nuevos",
+                "echo #.2desafíos y oportunidades para",
+                "echo #.2crecer en el mundo de la",
+                "echo #.2tecnología.",
+                "echo"
+            ]
+        },
+        {
+            "name": "education",
+            "description": "List of education",
+            "usage": [
+                "echo #.l#.2Educación",
+                "echo #.l#.2Universidad del Centro de la Provincia de Buenos Aires", 
+                "echo #.6Ingeniería en Sistemas de Información",
+                "echo #.6(2020 - Actualidad)",
+                "echo",
+                "echo #.l#.2Escuela San Jose de Tandil",
+                "echo #.6Bachiller en Economía y Administración", 
+                "echo #.6(2005 - 2019)",
+                "echo",
+                "echo #.l#.2Languages",
+                "echo #.6Spanish",
+                "echo #.6English",
+                "echo"
+            ]
+        },
+        {
+            "name": "knowledge",
+            "description": "List of knowledge and skills",
+            "usage": [
+                "echo #.l#.2Conocimientos y Habilidades", 
+                "echo #.l#.2Lenguajes de Programación",
+                "echo #.6Java",
+                "echo #.6Python",
+                "echo #.6C#", 
+                "echo #.6PostgreSQL",
+                "echo",
+                "echo #.l#.2Heramientas y Tecnologías",
+                "echo #.6Git",
+                "echo #.6Blender",
+                "echo #.6Unity", 
+                "echo #.6Android Studio",
+                "echo #.6And other tools",
+                "echo",
+                "echo #.l#.2Learning",
+                "echo #.6HTML",
+                "echo #.6CSS",
+                "echo #.6JavaScript",
+                "echo #.6Angular", 
+                "echo #.6TypeScript",
+                "echo #.6OpenGL",
+                "echo"
+            ]
+        },
+        {
+            "name": "projects",
+            "description": "List of projects",
+            "usage": [
+                "echo #.l#.2Proyectos",
+                "echo #.l#.3Compilador#.r #.2(finished)",
+                "echo #.7Compilador en base a un trabajo en grupo de la universidad, el cual se encarga de analizar un archivo de texto con un lenguaje de programación propio y compilarlo a un lenguaje de programación de bajo nivel.",
+                "echo #.4Technologias: #.6Java, Assembly",
+                "echo",
+                "echo #.l#.3Bot de Trading Algoritmico#.r #.2(finished)",
+                "echo #.7Trabajo en grupo de la universidad, el cual se encarga de realizar trading algoritmico en base a una serie de indicadores tecnicos.",
+                "echo #.4Technologias: #.6Python",
+                "echo",
+                "echo #.l#.3TimeCalculator App#.r #.2(finished)",
+                "echo #.7Aplicacion de calcular el tiempo que va a tardar en ver una serie de videos en base a la duracion de los mismos.",
+                "echo #.4Technologias: #.6Java, Android",
+                "echo",
+                "echo #.l#.3Generador de mapas 2D#.r #.2(in progress)",
+                "echo #.7Generador de mapas en 2D, el cual se encarga de generar un mapa a partir de varias tecnicas de generación.",
+                "echo #.4Technologias: #.6Unity, C#",
+                "echo",
+                "echo #.l#.3Arcade Game (private repo)#.r #.2(in progress)",
+                "echo #.7Juego arcade parecido al vampire survivors pero mezclado con el estilo de juego de minecraft",
+                "echo #.7Generos: survival, crafting, sandbox, bullet hell.",
+                "echo #.4Technologias: #.6Unity, C#",
+                "echo",
+                "echo #.l#.3Sistema de turnos medicos (private repo)#.r #.2(in progress)",
+                "echo #.7Sistema de turnos medicos para clinicas, el cual se encarga de gestionar los turnos de los pacientes y los medicos.",
+                "echo #.4Technologias: #.6Java, Spring, Angular, TypeScript, PostgreSQL",
+                "echo"
+            ]
+        },
+        {
+            "name": "experience",
+            "description": "List of experience",
+            "usage": [
+                "echo #.l#.2Experiencia",
+                "echo",
+                "echo #.l#.2Assistant Professor of Programming 3",
+                "echo #.6Universidad del Centro de la Provincia de Buenos Aires",
+                "echo #.6May 20,2024 - Present",
+                "echo"
+            ]
+        },
+        {
+            "name": "contact",
+            "description": "Contact information",
+            "usage": [
+                "echo #.l#.2Contacto", 
+                "echo #.6Email: felipemanu2015@gmail.com",
+                "echo #.6GitHub: FelipePipe2002",
+                "echo #.6LinkedIn: Felipe Bertoldi",
+                "echo"
+            ]
+        },
+        {
+            "name": "textFormatter",
+            "description": "show code to format text",
+            "usage": [
+                "echo #.0 #. 0 - change text color to black",
+                "echo #.1 #. 1 - change text color to dark blue",
+                "echo #.2 #. 2 - change text color to dark green",
+                "echo #.3 #. 3 - change text color to dark aqua",
+                "echo #.4 #. 4 - change text color to dark red",
+                "echo #.5 #. 5 - change text color to dark purple",
+                "echo #.6 #. 6 - change text color to gold",
+                "echo #.7 #. 7 - change text color to gray",
+                "echo #.8 #. 8 - change text color to dark gray",
+                "echo #.9 #. 9 - change text color to blue",
+                "echo #.a #. a - change text color to green",
+                "echo #.b #. b - change text color to aqua",
+                "echo #.c #. c - change text color to red",
+                "echo #.d #. d - change text color to light purple",
+                "echo #.j #. j - change each char color randomly in a text",
+                "echo #. k #.k - change text inside to random",
+                "echo #.l #. l - make text bold",
+                "echo #.m #. m - put a line through the text",
+                "echo #.n #. n - underline the text",
+                "echo #.o #. o - italicize the text",
+                "echo #.r #. r - reset",
+                "echo"
+            ]
+        },
+        {
+            "name": "snake",
+            "description": "Play snake game",
+            "usage": ["openWindows 500px 400px Snake snake.html snake.js"]
+        },
+        {
+            "name": "pong",
+            "description": "Play pong game",
+            "usage": ["openWindows 500px 400px Pong pong.html pong.js"]
+        }
+    ]
+}
