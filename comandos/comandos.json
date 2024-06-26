@@ -25,9 +25,9 @@
             "description": "About me",
             "usage": [
                 "echo #.l#.2Felipe Manuel Bertoldi#.r",
-                "echo #.3Soy estudiante de Ingeniería en",
-                "echo #.3Sistemas de Información en la",
-                "echo #.3Universidad del Centro de la",
+                "echo #.3Soy estudiante de Ingeniería de",
+                "echo #.3Sistemas en la Universidad",
+                "echo #.3del Centro de la",
                 "echo #.3Provincia de Buenos Aires.",
                 "echo #.aMe apasiona la programación,",
                 "echo #.6el desarrollo de aplicaciones,",
@@ -47,7 +47,7 @@
             "usage": [
                 "echo #.l#.2Educación",
                 "echo #.l#.2Universidad del Centro de la Provincia de Buenos Aires", 
-                "echo #.6Ingeniería en Sistemas de Información",
+                "echo #.6Ingeniería de Sistemas",
                 "echo #.6(2020 - Actualidad)",
                 "echo",
                 "echo #.l#.2Escuela San Jose de Tandil",
