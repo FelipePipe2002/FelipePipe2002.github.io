@@ -174,12 +174,12 @@
         {
             "name": "snake",
             "description": "Play snake game",
-            "usage": ["openWindows 500px 400px Snake snake.html snake.js"]
+            "usage": ["openWindows 500px 400px Snake game.html snake.js"]
         },
         {
             "name": "pong",
             "description": "Play pong game",
-            "usage": ["openWindows 500px 400px Pong pong.html pong.js"]
+            "usage": ["openWindows 500px 400px Pong game.html pong.js"]
         }
     ]
 }
