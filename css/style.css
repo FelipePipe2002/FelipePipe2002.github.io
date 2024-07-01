@@ -22,9 +22,9 @@ h1,h2,h3,h4,h5,h6,p{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
+    width: 75vw;
     min-width: 400px;
-    height: 75%;
+    height: 75vh;
     min-height: 300px;
     border-radius: 10px;
     box-shadow: 0 0 10px 5px #000;
@@ -136,7 +136,7 @@ h1,h2,h3,h4,h5,h6,p{
     }
 }
 
-#canvagame{
+#snake{
     canvas{
         background-color: #fff;
         display: block;
@@ -154,5 +154,27 @@ h1,h2,h3,h4,h5,h6,p{
         left: 50%;
         transform: translate(-50%, -50%);
 
+    }
+}
+
+/*
+    transform: translateX(-50%) translateY(-50%) rotate(90deg);
+    top: 50%;
+    left: 50%;
+    width: 90vh;
+*/
+
+@media screen and (max-width: 600px){
+
+    body{
+        background-image: url(../images/background_rotated.png);
+    }
+
+    #console{
+        transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        top: 50%;
+        left: 50%;
+        width: 75vh;
+        height: 75vw;
     }
 }
