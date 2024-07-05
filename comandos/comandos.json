@@ -17,7 +17,7 @@
         },
         {
             "name": "color",
-            "description": "Change text color",
+            "description": "Change text color using color from #000000 to #FFFFFF",
             "usage": ["color {color}"]
         },
         {

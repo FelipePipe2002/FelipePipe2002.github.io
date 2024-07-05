@@ -10,7 +10,6 @@ fetch("comandos/comandos.json")
   .then((data) => {
     commands = data.commands;
     for (let key in commands) {
-      console.log(commands[key].name);
       if (commands[key].name === "about") {
         separateCommands("", commands[key].usage);
         break;
@@ -22,15 +21,11 @@ fetch("comandos/comandos.json")
   });
 
 //console movement
-movableWindow = (object,event) => {
+movableWindow = (object, event) => {
   shiftX =
-    event.clientX -
-    object.getBoundingClientRect().left +
-    window.innerWidth / 2;
+    event.clientX - object.getBoundingClientRect().left + window.innerWidth / 2;
   shiftY =
-    event.clientY -
-    object.getBoundingClientRect().top +
-    window.innerHeight / 2;
+    event.clientY - object.getBoundingClientRect().top + window.innerHeight / 2;
 
   function moveAt(pageX, pageY) {
     object.style.transform = `translate(${pageX - shiftX}px,${Math.max(
@@ -56,71 +51,103 @@ movableWindow = (object,event) => {
   object.addEventListener("mouseup", function () {
     document.removeEventListener("mousemove", onMouseMove);
   });
-}
+};
 
-console_header.addEventListener("mousedown", function(event) {
+console_header.addEventListener("mousedown", function (event) {
   movableWindow(terminal, event);
 });
 
 textarea.value = "C:\\FelipePipe\\Portafolio> ";
 commands_history = [];
+let partialCommand = "";
 let index = 0;
 textarea.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    let input = sanitize(textarea.value);
-    content.innerHTML += `<p>${input}</p>`;
-    let end = input.indexOf(" ", 29); //29 is the length of the initial string and find the space after the command
-    let command = input.substring(29, end);
-    if (end === -1) {
-      command = input.substring(29);
-    }
-    commands_history.push(input.substring(29));
-    index = commands_history.length;
-
-    let foundCommand = false;
-    for (let key in commands) {
-      if (commands[key].name === command) {
-        let args = input.substring(end + 1);
-        if (end === -1) {
-          args = "<br>";
-        }
-        separateCommands(args, commands[key].usage);
-        foundCommand = true;
-        break;
+  switch (event.key) {
+    case "Enter":
+      partialCommand = "";
+      indexAutocomplete = 0;
+      event.preventDefault();
+      let input = sanitize(textarea.value);
+      content.innerHTML += `<p>${input}</p>`;
+      let end = input.indexOf(" ", 29); //29 is the length of the initial string and find the space after the command
+      let command = input.substring(29, end);
+      if (end === -1) {
+        command = input.substring(29);
       }
-    }
-    if (!foundCommand) {
-      content.innerHTML += `<p>'${command}' is not recognized as an internal or external command, use "help" to see the list of commands</p> <br>`;
-    }
-
-    restartCommandInput();
-    console_body.scrollTo(0, console_body.scrollHeight);
-  }
-  if (event.key === "Tab") {
-    event.preventDefault();
-    autocomplete();
-  }
-  if (event.key === "ArrowUp") {
-    event.preventDefault();
-    if (index > 0) {
-      index--;
-      textarea.value = "C:\\FelipePipe\\Portafolio> " + commands_history[index];
-    }
-  }
-  if (event.key === "ArrowDown") {
-    event.preventDefault();
-    if (index < commands_history.length - 1) {
-      index++;
-      textarea.value = "C:\\FelipePipe\\Portafolio> " + commands_history[index];
-    } else {
-      textarea.value = "C:\\FelipePipe\\Portafolio> ";
+      commands_history.push(input.substring(29));
       index = commands_history.length;
-    }
+
+      let foundCommand = false;
+      for (let key in commands) {
+        if (commands[key].name === command) {
+          let args = input.substring(end + 1);
+          if (end === -1) {
+            args = "<br>";
+          }
+          separateCommands(args, commands[key].usage);
+          foundCommand = true;
+          break;
+        }
+      }
+      if (!foundCommand) {
+        content.innerHTML += `<p>'${command}' is not recognized as an internal or external command, use "help" to see the list of commands</p> <br>`;
+      }
+
+      restartCommandInput();
+      console_body.scrollTo(0, console_body.scrollHeight);
+      break;
+    case "Tab":
+      event.preventDefault();
+      let listCommands = [];
+      for (let key in commands) {
+        if (commands[key].name.startsWith(partialCommand)) {
+          listCommands.push(commands[key].name);
+        }
+      }
+      autocomplete(listCommands);
+      break;
+    case "ArrowUp":
+      event.preventDefault();
+      if (index > 0) {
+        index--;
+        textarea.value =
+          "C:\\FelipePipe\\Portafolio> " + commands_history[index];
+      }
+      break;
+    case "ArrowDown":
+      event.preventDefault();
+      if (index < commands_history.length - 1) {
+        index++;
+        textarea.value =
+          "C:\\FelipePipe\\Portafolio> " + commands_history[index];
+      } else {
+        textarea.value = "C:\\FelipePipe\\Portafolio> ";
+        index = commands_history.length;
+      }
+      break;
+    case "Backspace":
+      if (textarea.value.length <= 26) {
+        event.preventDefault();
+      }
+      partialCommand = textarea.value.substring(26, textarea.value.length - 1);
+      if (event.key === "Backspace" && event.ctrlKey) {
+        partialCommand = "";
+      }
+
+      indexAutocomplete = 0;
+      break;
+    default:
+      if (event.key.length === 1) {
+        if (textarea.value.length > 26) {
+          partialCommand = textarea.value.substring(26, textarea.value.length);
+        }
+        partialCommand += event.key;
+      }
+      break;
   }
+
+  console_body.scrollTo(0, console_body.scrollHeight);
 });
-
-
 
 textarea.addEventListener("input", function () {
   if (!textarea.value.startsWith("C:\\FelipePipe\\Portafolio> ")) {
@@ -136,25 +163,16 @@ sanitize = (str) => {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 };
 
-autocomplete = () => {
-  let input = sanitize(textarea.value);
-  let end = input.indexOf(" ", 29); //29 is the length of the initial string and find the space after the command
-  let command = input.substring(29, end);
-  if (end === -1) {
-    command = input.substring(29);
+let indexAutocomplete = 0;
+
+autocomplete = (listCommands) => {
+  if (listCommands.left === "undefined" || listCommands.length === 0) {
+    return;
   }
-  let foundCommand = false;
-  for (let key in commands) {
-    console.log(commands[key].name + " " + command);
-    if (commands[key].name.startsWith(command)) {
-      textarea.value = "C:\\FelipePipe\\Portafolio> " + commands[key].name;
-      foundCommand = true;
-      break;
-    }
-  }
-  if (!foundCommand) {
-    textarea.value = "C:\\FelipePipe\\Portafolio> ";
-  }
+  textarea.value =
+    "C:\\FelipePipe\\Portafolio> " + listCommands[indexAutocomplete];
+  indexAutocomplete++;
+  indexAutocomplete = indexAutocomplete % listCommands.length;
 };
 
 let tformatter = {
@@ -240,11 +258,10 @@ separateCommands = (args, usage) => {
       index = usage[i].length;
       arg = "<br>";
     }
-    console.log(arg + " | " + args);
-    if (arg.includes("{args}") ) {
+    if (arg.includes("{args}")) {
       arg = args;
     }
-    if(arg.includes("{color}")){
+    if (arg.includes("{color}")) {
       arg = args;
     }
     arg = arg.replaceAll(" ", "&nbsp");
@@ -265,12 +282,10 @@ executeCommand = (arg, usage) => {
       break;
     case "openWindows":
       args = arg.split("&nbsp");
-      openWindows(args[0], args[1], args[2], args[3],args[4]);
+      openWindows(args[0], args[1], args[2], args[3], args[4]);
       break;
     case "color":
-      console.log(usage + " " + arg);
       if (/^#[0-9A-F]{6}$/i.test(arg)) {
-        console.log("Valid color format");
         console_body.style.color = arg;
         textarea.style.color = arg;
       } else {
@@ -292,12 +307,10 @@ clear = () => {
 };
 
 echo = (text) => {
-  console.log("voy a imprimir esto " + text);
   text = textFormatter(content, text);
 };
 
-openWindows = (xSize, ySize, title, contenthtml,contentjs) => {
-  console.log("openWindows " + xSize + " " + ySize + " " + title + " " + contenthtml + " " + contentjs);
+openWindows = (xSize, ySize, title, contenthtml, contentjs) => {
   //content is a html file
   fetch("html/" + contenthtml)
     .then((response) => response.text())
@@ -330,9 +343,11 @@ openWindows = (xSize, ySize, title, contenthtml,contentjs) => {
       window.querySelector("#exit").addEventListener("click", function () {
         window.remove();
       });
-      window.querySelector("#window-header").addEventListener("mousedown", function(event) {
-        movableWindow(window, event);
-      });
+      window
+        .querySelector("#window-header")
+        .addEventListener("mousedown", function (event) {
+          movableWindow(window, event);
+        });
       document.body.appendChild(window);
       fetch("js/" + contentjs)
         .then((response) => response.text())
@@ -343,7 +358,7 @@ openWindows = (xSize, ySize, title, contenthtml,contentjs) => {
         })
         .catch((error) => {
           console.error("Error fetching JS:", error);
-        })
+        });
     })
     .catch((error) => {
       console.error("Error fetching HTML:", error);
